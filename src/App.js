@@ -72,7 +72,7 @@ const App = () => {
           }else{
             dispatch({
               type:"SEARCH_MOVIES_FAILURE",
-              error:data.error
+              error:data.Error
             })
           }
         })
@@ -90,7 +90,10 @@ const App = () => {
          <div className="errorMessage">{errorMessage}</div>
        ) : (
          movies.map((movie,index) => (
-           <Movie key={`${index}-${movie.Title}`} movie={movie}/>
+           <Movie
+             key={`${index}-${movie.Title}`}
+             movie={movie}
+             />
          ))
        )}
     </div>
